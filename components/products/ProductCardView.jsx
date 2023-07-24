@@ -43,14 +43,15 @@ export default ProductCardView;
 const styles = StyleSheet.create({
   container: {
     width: 182,
-    height: 240,
-    marginEnd: 22,
+    height: 280,
+    marginEnd: 5,
     borderRadius: SIZES.medium,
     backgroundColor: COLORS.secondary,
   },
   imageContainer: {
     flex: 1,
     width: 170,
+    height: 100,
     marginLeft: SIZES.small / 2,
     marginTop: SIZES.small / 2,
     borderRadius: SIZES.small,
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: "bold",
     fontSize: SIZES.large,
-    marginBottom: 2,
+    // marginBottom: 1,
   },
 
   supplier: {
@@ -81,10 +82,12 @@ const styles = StyleSheet.create({
   price: {
     fontFamily: "medium",
     fontSize: SIZES.medium,
+    paddingBottom: 12,
   },
   addBtn: {
     position: "absolute",
     bottom: SIZES.xSmall,
     right: SIZES.xSmall,
+    paddingBottom: 12,
   },
 });

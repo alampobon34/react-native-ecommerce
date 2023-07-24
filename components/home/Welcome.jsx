@@ -9,12 +9,12 @@ const Welcome = () => {
   return (
     <View>
       <View style={styles.container}>
-        <Text style={styles.welcomeTxt(COLORS.black, SIZES.xSmall)}>
+        {/* <Text style={styles.welcomeTxt(COLORS.black, SIZES.xSmall)}>
           Welcome
         </Text>
         <Text style={styles.welcomeTxt(COLORS.primary, 0)}>
           Luxarious Furniture
-        </Text>
+        </Text> */}
       </View>
       <View style={styles.searchContainer}>
         <TouchableOpacity>
