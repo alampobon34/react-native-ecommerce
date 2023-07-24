@@ -81,7 +81,7 @@ const ProductDetails = ({ navigation }) => {
           <View style={styles.location}>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Ionicons name="location-outline" size={24} />
-              <Text> Dhaka </Text>
+              <Text> Dhaka fsdsdsdf</Text>
             </View>
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
