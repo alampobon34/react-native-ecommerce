@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
+import { useRoute } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, SIZES } from "../constants/index";
 import {
@@ -10,6 +11,8 @@ import {
 } from "@expo/vector-icons";
 const ProductDetails = ({ navigation }) => {
   const [count, setCount] = useState(1);
+  const route = useRoute();
+  const { item } = route.params;
 
   const increment = () => {
     setCount(count + 1);
@@ -24,7 +27,11 @@ const ProductDetails = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.upperRow}>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.goBack();
+          }}
+        >
           <Ionicons name="chevron-back-circle" size={30} />
         </TouchableOpacity>
         <TouchableOpacity onPress={() => {}}>
@@ -34,14 +41,14 @@ const ProductDetails = ({ navigation }) => {
       <Image
         style={styles.image}
         source={{
-          uri: "https://img.freepik.com/free-photo/mid-century-modern-living-room-interior-design-with-monstera-tree_53876-129804.jpg",
+          uri: item.images.pop(),
         }}
       />
       <View style={styles.details}>
         <View style={styles.titleRow}>
-          <Text style={styles.title}>asdasasd</Text>
+          <Text style={styles.title}>{item?.title}</Text>
           <View style={styles.priceWrapper}>
-            <Text style={styles.price}>BDT 100.00</Text>
+            <Text style={styles.price}>${item?.price}.00</Text>
           </View>
         </View>
 
@@ -50,7 +57,7 @@ const ProductDetails = ({ navigation }) => {
             {[1, 2, 3, 4, 5].map((index) => (
               <Ionicons key={index} name="star" size={24} color="gold" />
             ))}
-            <Text style={styles.ratingTxt}> (4.9)</Text>
+            <Text style={styles.ratingTxt}> ({item?.rating})</Text>
           </View>
 
           <View style={styles.rating}>
@@ -65,18 +72,13 @@ const ProductDetails = ({ navigation }) => {
         </View>
         <View style={styles.descriptionWrapper}>
           <Text style={styles.description}>Description</Text>
-          <Text style={styles.descTxt}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </Text>
+          <Text style={styles.descTxt}>{item?.description}</Text>
         </View>
         <View style={{ marginBottom: SIZES.small }}>
           <View style={styles.location}>
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <Ionicons name="location-outline" size={24} />
-              <Text> Dhaka fsdsdsdf</Text>
+              <Text> Dhaka</Text>
             </View>
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -119,7 +121,7 @@ const styles = StyleSheet.create({
 
   image: {
     aspectRatio: 1,
-    resizeMode: "cover",
+    resizeMode: "contain",
   },
 
   details: {

@@ -3,7 +3,7 @@ import React from "react";
 import { COLORS, SIZES } from "../../constants/index";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-const ProductCardView = () => {
+const ProductCardView = ({ item }) => {
   const navigation = useNavigation();
   const imges = [
     require("../../assets/images/fn1.jpg"),
@@ -11,24 +11,26 @@ const ProductCardView = () => {
     require("../../assets/images/fn3.jpg"),
   ];
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("ProductDetails")}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("ProductDetails", { item })}
+    >
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image
             style={styles.image}
             source={{
-              uri: "https://img.freepik.com/free-photo/mid-century-modern-living-room-interior-design-with-monstera-tree_53876-129804.jpg",
+              uri: item?.thumbnail,
             }}
           />
         </View>
         <View style={styles.details}>
           <Text style={styles.title} numberOfLines={1}>
-            sdasassad
+            {item?.title}
           </Text>
           <Text style={styles.supplier} numberOfLines={1}>
-            sdasassad
+            {item?.category}
           </Text>
-          <Text style={styles.price}>BDT100</Text>
+          <Text style={styles.price}>${item?.price}.00</Text>
         </View>
         <TouchableOpacity style={styles.addBtn}>
           <Ionicons name="add-circle" size={35} color={COLORS.primary} />
