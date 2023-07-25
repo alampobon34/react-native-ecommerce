@@ -1,8 +1,8 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import {Search} from "./screens/index";
+import { Search, NewRivals } from "./screens/index";
 import Cart from "./screens/Cart";
-import {ProductDetails} from './screens/index'
+import { ProductDetails, Login } from "./screens/index";
 import { StyleSheet } from "react-native";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
@@ -49,6 +49,18 @@ export default function App() {
         <Stack.Screen
           name="ProductDetails"
           component={ProductDetails}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="ProductList"
+          component={NewRivals}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Login"
+          component={Login}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

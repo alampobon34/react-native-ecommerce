@@ -117,11 +117,12 @@ const styles = StyleSheet.create({
     top: SIZES.xxLarge,
     width: SIZES.width - 44,
     zIndex: 999,
+    paddingBottom: 12
   },
 
   image: {
     aspectRatio: 1,
-    resizeMode: "contain",
+    resizeMode: 'contain',
   },
 
   details: {
