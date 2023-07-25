@@ -110,19 +110,21 @@ const styles = StyleSheet.create({
 
   upperRow: {
     flexDirection: "row",
-    marginHorizontal: 20,
     justifyContent: "space-between",
     alignItems: "center",
     position: "absolute",
     top: SIZES.xxLarge,
-    width: SIZES.width - 44,
+    width: SIZES.width - 40,
     zIndex: 999,
-    paddingBottom: 12
+    paddingBottom: 12,
+    marginLeft: 12,
   },
 
   image: {
     aspectRatio: 1,
-    resizeMode: 'contain',
+    resizeMode: "cover",
+    overflow: "hidden",
+    width: "100%",
   },
 
   details: {

@@ -1,14 +1,17 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Login = () => {
   return (
-    <View>
-      <Text>Login</Text>
-    </View>
-  )
-}
+    <SafeAreaView>
+      <View>
+        <Text>Login</Text>
+      </View>
+    </SafeAreaView>
+  );
+};
 
-export default Login
+export default Login;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

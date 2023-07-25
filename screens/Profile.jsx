@@ -19,16 +19,19 @@ const Profile = () => {
       <View style={styles.row2}>
         <View style={{ alignItems: "center", marginTop: -50 }}>
           <Image
-            source={require('../assets/images/userDefault.png')}
+            source={require("../assets/images/userDefault.png")}
             style={{ width: 100, height: 100, borderRadius: 100 / 2 }}
           />
         </View>
         <View>
           <Text style={styles.profileText}>Please login into you account.</Text>
         </View>
-        <View style={{alignItems:'center'}}>
-          <TouchableOpacity onPress={() => navigation.navigate('Login')} style={styles.profileBtn}>
-            <Text style={{color: COLORS.lightWhite}}>LOGIN</Text>
+        <View style={{ alignItems: "center" }}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Login")}
+            style={styles.profileBtn}
+          >
+            <Text style={{ color: COLORS.lightWhite }}>LOGIN</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -72,13 +75,11 @@ const styles = StyleSheet.create({
     paddingVertical: 12,
   },
 
-  profileBtn:{
+  profileBtn: {
     padding: SIZES.small,
     borderRadius: SIZES.small,
     backgroundColor: COLORS.primary,
     width: "30%",
-    alignItems:'center',
-    
-    
-  }
+    alignItems: "center",
+  },
 });
